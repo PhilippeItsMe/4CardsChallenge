@@ -1,7 +1,134 @@
-/* Import fonts */
-@import url();
+/* Colors
 
+    Primary
+        Red: hsl(0, 78%, 62%)
+        Cyan: hsl(180, 62%, 55%)
+        Orange: hsl(34, 97%, 64%)
+        Blue: hsl(212, 86%, 64%)
+    Neutral
+        Very Dark Blue: hsl(234, 12%, 34%)
+        Grayish Blue: hsl(229, 6%, 66%)
+        Very Light Gray: hsl(0, 0%, 98%)
+*/
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    color: hsl(229, 6%, 66%);
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-weight: 600;
+    color: hsl(234, 12%, 34%);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: hsl(234, 12%, 34%);
+ }
+
+h3 {
+    font-weight: 200;
+    font-size: 1.5rem;
+}
+
+p{
+    font-size: 0.9rem;
+}
+
+/* Titles */
+hgroup {
+    text-align: center;
+    margin: auto;
+    padding: 4rem 1rem;
+    width: 90%; 
+}
+
+hgroup p {
+    font-size: 1rem;
+    text-align: center;
+    max-width: 375px;
+    margin: auto;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1f;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    grid-template-areas: 
+        "supervisor"
+        "teambuilder"
+        "karma"
+        "calculator";
+}
+
+article {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    padding: 1rem 2rem 1rem 2rem;
+    width: 90%;
+    max-width: 350px;; 
+    margin: auto;
+}
+
+img {
+    float: right;
+    margin: 1rem 0;
+    width: 3rem;
+    height: 3rem;
+}
+
+.supervisor {
+    grid-area: supervisor;
+    border-top: 0.3rem solid hsl(180, 62%, 55%);
+}
+
+.teambuilder {
+    grid-area: teambuilder;
+    border-top: 0.3rem solid hsl(0, 78%, 62%);
+}
+.karma {
+    grid-area: karma;
+    border-top: 0.3rem solid hsl(34, 97%, 64%);
+}
+.calculator {
+    grid-area: calculator;
+    border-top: 0.3rem solid hsl(212, 86%, 64%);
+}
 
 /* Signature */
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution { font-size: 11px; text-align: center; margin-top: 1rem; }
+.attribution a { color: hsl(34, 97%, 64%); }
+
+@media screen and (min-width: 750px) {
+    section {
+    grid-template-areas: 
+        "supervisor karma"
+        "teambuilder calculator";
+    }
+    article {
+        width: 100%;
+        margin: none;
+    }
+}
+
+@media screen and (min-width: 1125px) {
+    section {
+    grid-template-areas: 
+        ". teambuilder ."
+        "supervisor teambuilder calculator"
+        "supervisor karma calculator"
+        ". karma .";
+    }
+    
